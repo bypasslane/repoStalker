@@ -1,0 +1,36 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:0.7.+'
+    }
+}
+
+apply plugin: 'android'
+
+dependencies {
+    repositories {
+        mavenCentral()
+    }
+
+
+    compile 'com.google.code.gson:gson:2.2.4'
+    compile 'com.squareup.retrofit:retrofit:1.2.2'
+    compile 'com.squareup.picasso:picasso:2.1.1'
+    compile 'com.android.support:support-v4:18.0.0'
+}
+
+android {
+    buildToolsVersion "17.0"
+    compileSdkVersion 19
+
+    defaultConfig {
+        versionCode 1
+        versionName "1"
+
+        minSdkVersion 14
+        targetSdkVersion 19
+    }
+}
