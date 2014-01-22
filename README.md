@@ -6,8 +6,9 @@ Bypass Mobile Android exercise
 ###Application Specification
 
 + Display a list of user names and profile images that belong to the bypass organization.
-  * Clicking on a member will display who they follow. 
+  * Clicking on a member will display a list of user names and profile images of who they follow. 
   * This process repeats itself for the newly displayed user
++ The cache library provided needs expiration and invalidation.
 
 Feel free to improve on any code provided.
 
