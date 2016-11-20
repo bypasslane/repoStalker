@@ -1,36 +1,21 @@
 buildscript {
     repositories {
         mavenCentral()
+        jcenter()
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:0.7.+'
+        classpath 'com.android.tools.build:gradle:2.2.2'
     }
 }
 
-apply plugin: 'android'
-
-dependencies {
+allprojects {
     repositories {
         mavenCentral()
+        jcenter()
     }
-
-
-    compile 'com.google.code.gson:gson:2.2.4'
-    compile 'com.squareup.retrofit:retrofit:1.2.2'
-    compile 'com.squareup.picasso:picasso:2.1.1'
-    compile 'com.android.support:support-v4:18.0.0'
 }
 
-android {
-    buildToolsVersion "22.0.1"
-    compileSdkVersion 19
-
-    defaultConfig {
-        versionCode 1
-        versionName "1"
-
-        minSdkVersion 14
-        targetSdkVersion 19
-    }
+task clean(type: Delete) {
+    delete rootProject.buildDir
 }
