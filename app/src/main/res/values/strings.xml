@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Octo-Stalker</string>
+    <string name="action_search">Search</string>
+    <string name="unexplainable_error_message">An error has occurred. Please try again later.</string>
+    <string name="header_format_1_arg">%1$s follows</string>
+    <string name="user_list_empty_message">This user is not stalking anyone at the moment</string>
+</resources>
