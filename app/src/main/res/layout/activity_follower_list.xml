@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_follower_list"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.bypassmobile.octo.FollowerListActivity">
+    <TextView
+        android:id="@+id/activity_follower_list_header_textview"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/follower_header_height"
+        android:paddingStart="@dimen/activity_horizontal_margin"
+        android:paddingEnd="@dimen/activity_horizontal_margin"
+        android:background="@color/follower_header_background"
+        android:gravity="center_vertical"
+        tools:text="Selected Username follows" />
+
+    <FrameLayout
+        android:id="@+id/activity_follower_list_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/activity_follower_list_header_textview" />
+</RelativeLayout>

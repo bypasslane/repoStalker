@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3f96d2</color>
+    <color name="colorPrimaryDark">#2876c0</color>
+    <color name="colorAccent">#9a9b9f</color>
+
+    <color name="follower_header_background">#9ddec5</color>
+</resources>
