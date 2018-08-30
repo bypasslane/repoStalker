@@ -1,0 +1,19 @@
+apply plugin: 'com.android.application'
+
+android {
+    buildToolsVersion "27.0.3"
+    compileSdkVersion 27
+    defaultConfig {
+        versionCode 1
+        versionName "1"
+        minSdkVersion 19
+        targetSdkVersion 27
+    }
+}
+
+dependencies {
+    implementation 'com.google.code.gson:gson:2.8.4'
+    implementation 'com.squareup.retrofit:retrofit:1.2.2'
+    implementation 'com.squareup.picasso:picasso:2.1.1'
+    implementation 'com.android.support:recyclerview-v7:27.1.1'
+}
