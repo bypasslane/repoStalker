@@ -1,6 +1,6 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.bypassmobile.octo.MainActivity" >
+    tools:context="com.bypassmobile.octo.features.listEmployees.EmployeeList" >
     
     <item android:id="@+id/action_settings"
         android:title="@string/action_settings"

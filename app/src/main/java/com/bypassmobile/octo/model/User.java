@@ -11,8 +11,12 @@ public class User {
     @SerializedName("avatar_url")
     private final String profileURL;
 
-    public User(String name, String profileURL) {
+    @SerializedName("id")
+    private final String userId;
+
+    public User(String name, String profileURL, String userId) {
         this.name = name;
+        this.userId = userId;
         this.profileURL = profileURL;
     }
 
@@ -23,4 +27,6 @@ public class User {
     public String getProfileURL() {
         return profileURL;
     }
+
+    public String getUserId() { return userId; }
 }

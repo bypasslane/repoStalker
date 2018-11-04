@@ -8,7 +8,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.bypassmobile.octo.MainActivity"
+            android:name="com.bypassmobile.octo.features.listEmployees.EmployeeList"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -36,4 +36,9 @@ public class ImageCache implements Cache{
     public void clear() {
         cacheMap.clear();
     }
+
+    @Override
+    public void clearKeyUri(String keyPrefix) {
+        //do nothing for now
+    }
 }
