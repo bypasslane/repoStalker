@@ -1,6 +1,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="60dp"
+    android:layout_height="wrap_content"
     android:paddingBottom="20dp"
     android:gravity="start|center_vertical">
 
@@ -15,6 +15,12 @@
     <TextView
         android:id="@+id/empName"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"/>
+
+    <TextView
+        android:id="@+id/empFollowCount"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"/>
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Octo-Stalker</string>
-    <string name="action_settings">Settings</string>
+    <string name="app_name">Repo-Stalker</string>
+    <string name="srch_icon">Search</string>
 </resources>

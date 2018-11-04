@@ -4,46 +4,35 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 
 import com.bypassmobile.octo.R;
 import com.bypassmobile.octo.features.BaseActivity;
 import com.bypassmobile.octo.model.User;
 import com.bypassmobile.octo.rest.GithubEndpoint;
-import com.bypassmobile.octo.utils.AppInfo;
 import com.bypassmobile.octo.utils.IntentKeys;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.Unbinder;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 public class EmployeeFollowing extends BaseActivity {
 
-    @BindView(R.id.employeeFollowers) RecyclerView mEmpRecView;
-
-    Unbinder mButKnifeUnbinder;
-
-    EmployeeListAdapter mListAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
         //set the layout
-        setContentView(R.layout.list_employees_following);
-        //bind buterknife
-        mButKnifeUnbinder = ButterKnife.bind(this);
-        //get the github data and show
+        setContentView(R.layout.list_employees_main);
+        //set base code
+        super.onCreate(savedInstanceState);
+        //get the github employee list and show
         GithubEndpoint endpoint = getEndpoint();
-        endpoint.getFollowingUser(getIntent().getStringExtra(IntentKeys.USER_ID)).enqueue(
+        endpoint.getFollowingUser(getIntent().getStringExtra(IntentKeys.USER_NAME)).enqueue(
                 new Callback<List<User>>() {
                     @Override
                     public void onResponse(Call<List<User>> call, Response<List<User>> response) {
@@ -62,36 +51,27 @@ public class EmployeeFollowing extends BaseActivity {
         );
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        
-        // Inflate the menu; this adds items to the action bar if it is present.
-        //getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
 
     //method to show the data on the layout
     private void showFollowers(List<User> users) {
+        //sort the list
+        if (users.size() > 0) {
+            Collections.sort(users, new Comparator<User>() {
+                @Override
+                public int compare(final User object1, final User object2) {
+                    return object1.getName().compareTo(object2.getName());
+                }
+            });
+        }
         //reset the adapter with new data
-        mListAdapter = new EmployeeListAdapter(this, users);
-        mListAdapter.setOnItemClickListener(new EmployeeListAdapter.ClickListener() {
+        mListAdapter = new EmployeeFollowersAdapter(this, users);
+        ((EmployeeFollowersAdapter) mListAdapter).setOnItemClickListener(new EmployeeFollowersAdapter.ClickListener() {
             @Override
             public void onItemClick(int position, Context c, View v) {
                 Intent intent = new Intent(c, EmployeeFollowing.class);
-                intent.putExtra(IntentKeys.USER_ID, users.get(position).getUserId());
-                c.startActivity(new Intent());
+                intent.putExtra(IntentKeys.USER_NAME, users.get(position).getUserId());
+                c.startActivity(intent);
             }
 
             @Override
@@ -103,4 +83,5 @@ public class EmployeeFollowing extends BaseActivity {
         //position the employees
         mEmpRecView.setLayoutManager(new LinearLayoutManager(this));
     }
+
 }

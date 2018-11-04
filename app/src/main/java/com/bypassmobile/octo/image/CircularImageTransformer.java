@@ -2,8 +2,12 @@ package com.bypassmobile.octo.image;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapShader;
+import android.graphics.BlurMaskFilter;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.Shader;
 
 import com.squareup.picasso.Transformation;
 
@@ -40,4 +44,5 @@ public class CircularImageTransformer implements Transformation {
     public String key() {
         return "circle";
     }
+
 }

@@ -16,14 +16,14 @@ import com.bypassmobile.octo.model.User;
 
 import java.util.List;
 
-public class EmployeeListAdapter extends RecyclerView.Adapter {
+public class EmployeeFollowersAdapter extends RecyclerView.Adapter {
 
     private List<User> mData;
     private Context mContext;
 
     private ClickListener clickListener;
 
-    EmployeeListAdapter(Context context, List<User> data) {
+    EmployeeFollowersAdapter(Context context, List<User> data) {
         this.mContext = context;
         this.mData = data;
     }
@@ -31,13 +31,11 @@ public class EmployeeListAdapter extends RecyclerView.Adapter {
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int i) {
         ((EmpViewHolder) viewHolder).mEmpName.setText(mData.get(i).getName());
-        if (!mData.get(i).getProfileURL().isEmpty()) {
-            ImageLoader.createImageLoader(mContext)
-                    .load(mData.get(i).getProfileURL())
-                    .transform(new CircularImageTransformer())
-                    .resize(40, 40)
-                    .into(((EmpViewHolder) viewHolder).mEmpImage);
-        }
+        ImageLoader.createImageLoader(mContext)
+                .load(mData.get(i).getProfileURL())
+                .resize(40,40)
+                .transform(new CircularImageTransformer())
+                .into(((EmpViewHolder) viewHolder).mEmpImage);
     }
 
     @Override
@@ -49,7 +47,7 @@ public class EmployeeListAdapter extends RecyclerView.Adapter {
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int i) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.list_employees_main_listadapter, parent, false);
+                .inflate(R.layout.list_employees_following_listadapter, parent, false);
         return new EmpViewHolder(view);
     }
 
