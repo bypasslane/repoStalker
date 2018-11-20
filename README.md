@@ -3,7 +3,7 @@ Octo-Stalker
 
 Bypass Mobile Android exercise
 
-###Application Specification
+### Application Specification
 
 + Display a list of user names and profile images that belong to the bypass organization.
   * Clicking on a member will display a list of user names and profile images of who they follow alphabetically.
@@ -11,20 +11,20 @@ Bypass Mobile Android exercise
   * Searching should show a filtered list of users.
 + The cache library provided needs expiration and invalidation.
 
-Feel free to improve on any code provided.
+Note #1: The code provided is out of date.  Please feel free to discard any and all of it and make use of any libraries and patterns you'd like.
 
-Note: If you start receiving 403 errors while developing it's becuase Github has a request limit of 60 queries per ip address per hour.
+Note #2: If you start receiving 403 errors while developing it's becuase Github has a request limit of 60 queries per ip address per hour.
 
-###[Mockups](./Mockups.pdf)
+### [Mockups](./Mockups.pdf)
 
-###Provided for you
+### Provided for you
 - Models
 - Image Loading
 - Restclient
 
 ### Example
 
-####HTTP Client Example
+#### HTTP Client Example
 
 ```java
 getEndpoint().getOrganizationMember("bypasslane", new Callback<List<User>>() {
@@ -35,7 +35,7 @@ getEndpoint().getOrganizationMember("bypasslane", new Callback<List<User>>() {
     public void failure(RetrofitError error) {}
 });
 ```
-####Load Image Example
+#### Load Image Example
 ```java
 ImageLoader.createImageLoader(this)
  .load("http://.../name.jpeg")
