@@ -10,6 +10,7 @@ Bypass Mobile Android exercise
   * This process repeats itself for the newly displayed user.
   * Searching should show a filtered list of users.
 + The cache library provided needs expiration and invalidation.
++ Provide tests in your solution.
 
 Note #1: The code provided is out of date.  Please feel free to discard any and all of it and make use of any libraries and patterns you'd like.
 
