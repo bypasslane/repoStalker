@@ -3,7 +3,7 @@ package com.bypassmobile.octo.model;
 
 import com.google.gson.annotations.SerializedName;
 
-public class User {
+public class UserJava {
 
     @SerializedName("login")
     private final String name;
@@ -11,7 +11,7 @@ public class User {
     @SerializedName("avatar_url")
     private final String profileURL;
 
-    public User(String name, String profileURL) {
+    public UserJava(String name, String profileURL) {
         this.name = name;
         this.profileURL = profileURL;
     }

@@ -1,8 +1,9 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-android'
 
 android {
-    buildToolsVersion "27.0.3"
-    compileSdkVersion 27
+    compileSdkVersion 28
     defaultConfig {
         versionCode 1
         versionName "1"
@@ -12,8 +13,18 @@ android {
 }
 
 dependencies {
-    implementation 'com.google.code.gson:gson:2.8.4'
-    implementation 'com.squareup.retrofit:retrofit:1.2.2'
-    implementation 'com.squareup.picasso:picasso:2.1.1'
-    implementation 'com.android.support:recyclerview-v7:27.1.1'
+    implementation "com.google.code.gson:gson:$gsonVersion"
+    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+    implementation "com.squareup.picasso:picasso:$picassoVersion"
+    implementation "androidx.recyclerview:recyclerview:$recyclerViewVersion"
+    implementation "io.reactivex.rxjava2:rxjava:$rxJavaVersion"
+    implementation "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion"
+    implementation "com.squareup.okhttp3:logging-interceptor:3.9.1"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+}
+
+repositories {
+    mavenCentral()
 }
