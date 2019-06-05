@@ -1,12 +1,27 @@
 buildscript {
+    ext.kotlin_version = '1.3.31'
     repositories {
         google()
         jcenter()
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.1.4'
+        classpath 'com.android.tools.build:gradle:3.3.0'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
+}
+
+ext {
+    minSDK = 17
+    compileSDK = 28
+    targetSDK = 22
+    gsonVersion = '2.8.5'
+    daggerVersion = '2.21'
+    rxJavaVersion = '2.2.9'
+    rxAndroidVersion = '2.1.1'
+    recyclerViewVersion = '1.0.0-beta01'
+    picassoVersion = '2.1.1'
+    retrofitVersion = '2.5.0'
 }
 
 allprojects {
